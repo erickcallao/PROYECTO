@@ -1,0 +1,33 @@
+<h1>Listing det_pedidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pedido</th>
+      <th>Producto</th>
+      <th>Fecha</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @det_pedidos.each do |det_pedido| %>
+      <tr>
+        <td><%= det_pedido.pedido %></td>
+        <td><%= det_pedido.producto %></td>
+        <td><%= det_pedido.fecha %></td>
+        <td><%= det_pedido.cantidad %></td>
+        <td><%= det_pedido.precio %></td>
+        <td><%= link_to 'Show', det_pedido %></td>
+        <td><%= link_to 'Edit', edit_det_pedido_path(det_pedido) %></td>
+        <td><%= link_to 'Destroy', det_pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Det pedido', new_det_pedido_path %>

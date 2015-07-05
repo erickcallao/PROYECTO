@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @det_compra.producto %>
+</p>
+
+<p>
+  <strong>Compra:</strong>
+  <%= @det_compra.compra %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @det_compra.precio %>
+</p>
+
+<p>
+  <strong>Catidad:</strong>
+  <%= @det_compra.catidad %>
+</p>
+
+<p>
+  <strong>Num bol fac:</strong>
+  <%= @det_compra.num_bol_fac %>
+</p>
+
+<%= link_to 'Edit', edit_det_compra_path(@det_compra) %> |
+<%= link_to 'Back', det_compras_path %>

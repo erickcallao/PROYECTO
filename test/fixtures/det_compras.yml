@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  producto_id: 
+  compra_id: 
+  precio: 1
+  catidad: 1
+  num_bol_fac: MyString
+
+two:
+  producto_id: 
+  compra_id: 
+  precio: 1
+  catidad: 1
+  num_bol_fac: MyString

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pedido_id: 
+  producto_id: 
+  fecha: 2015-06-25
+  cantidad: 1
+  precio: 1
+
+two:
+  pedido_id: 
+  producto_id: 
+  fecha: 2015-06-25
+  cantidad: 1
+  precio: 1
