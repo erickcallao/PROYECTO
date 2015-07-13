@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  venta_id: 
-  producto_id: 
+  precio_vent: 1
   cantidad: 1
-  precio_venta: 1
+  producto_id: 
+  venta_id: 
 
 two:
-  venta_id: 
-  producto_id: 
+  precio_vent: 1
   cantidad: 1
-  precio_venta: 1
+  producto_id: 
+  venta_id: 

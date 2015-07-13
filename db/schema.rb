@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625204511) do
+ActiveRecord::Schema.define(version: 20150706215246) do
+
+  create_table "almacens", force: true do |t|
+    t.string   "nombre"
+    t.string   "direccion"
+    t.string   "codigo"
+    t.string   "telefono"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categoria", force: true do |t|
     t.string   "nombre"
@@ -67,16 +76,70 @@ ActiveRecord::Schema.define(version: 20150625204511) do
   add_index "det_pedidos", ["producto_id"], name: "index_det_pedidos_on_producto_id", using: :btree
 
   create_table "det_venta", force: true do |t|
-    t.integer  "venta_id"
-    t.integer  "producto_id"
+    t.integer  "precio_vent"
     t.integer  "cantidad"
-    t.integer  "precio_venta"
+    t.integer  "producto_id"
+    t.integer  "venta_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "det_venta", ["producto_id"], name: "index_det_venta_on_producto_id", using: :btree
   add_index "det_venta", ["venta_id"], name: "index_det_venta_on_venta_id", using: :btree
+
+  create_table "fisis", force: true do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "inventario_detalles", force: true do |t|
+    t.integer  "inventario_id"
+    t.integer  "item_id"
+    t.decimal  "cantidad",          precision: 10, scale: 0
+    t.decimal  "precio_unitario",   precision: 10, scale: 0
+    t.boolean  "activo"
+    t.date     "fecha_vencimiento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "inventario_detalles", ["inventario_id"], name: "index_inventario_detalles_on_inventario_id", using: :btree
+  add_index "inventario_detalles", ["item_id"], name: "index_inventario_detalles_on_item_id", using: :btree
+
+  create_table "inventarios", force: true do |t|
+    t.integer  "almacen_id"
+    t.datetime "fecha"
+    t.string   "descripcion"
+    t.string   "tipo"
+    t.decimal  "total",       precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "inventarios", ["almacen_id"], name: "index_inventarios_on_almacen_id", using: :btree
+
+  create_table "items", force: true do |t|
+    t.integer  "partida_id"
+    t.integer  "unidad_medida_id"
+    t.string   "codigo"
+    t.string   "nombre"
+    t.string   "unidad_medida"
+    t.string   "foto_file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["partida_id"], name: "index_items_on_partida_id", using: :btree
+  add_index "items", ["unidad_medida_id"], name: "index_items_on_unidad_medida_id", using: :btree
+
+  create_table "partidas", force: true do |t|
+    t.string   "codigo"
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pedidos", force: true do |t|
     t.date     "fecha"
@@ -87,15 +150,17 @@ ActiveRecord::Schema.define(version: 20150625204511) do
 
   create_table "productos", force: true do |t|
     t.string   "nombre"
-    t.string   "descripcion", limit: 100, null: false
+    t.string   "descripcion",  limit: 100, null: false
     t.integer  "precio"
     t.integer  "stock"
     t.string   "estado"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",                 null: false
+    t.integer  "user_id",                  null: false
+    t.integer  "categoria_id"
   end
 
+  add_index "productos", ["categoria_id"], name: "index_productos_on_categoria_id", using: :btree
   add_index "productos", ["user_id"], name: "user_id", using: :btree
 
   create_table "proveedors", force: true do |t|
@@ -103,6 +168,30 @@ ActiveRecord::Schema.define(version: 20150625204511) do
     t.string   "apellido"
     t.string   "celular"
     t.string   "direccion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stocks", force: true do |t|
+    t.integer  "almacen_id"
+    t.integer  "item_id"
+    t.decimal  "cantidad",          precision: 10, scale: 0
+    t.decimal  "valor_inventario",  precision: 10, scale: 0
+    t.boolean  "activo"
+    t.string   "estado"
+    t.string   "accion"
+    t.date     "fecha_vencimiento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stocks", ["almacen_id"], name: "index_stocks_on_almacen_id", using: :btree
+  add_index "stocks", ["item_id"], name: "index_stocks_on_item_id", using: :btree
+
+  create_table "unidad_medidas", force: true do |t|
+    t.string   "nombre"
+    t.string   "abreviatura"
+    t.boolean  "entero"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -14,8 +14,8 @@
   <tbody>
     <% @compras.each do |compra| %>
       <tr>
-        <td><%= compra.user %></td>
-        <td><%= compra.proveedor %></td>
+        <td><%= compra.user_id %></td>
+        <td><%= compra.proveedor_id %></td>
         <td><%= compra.fecha %></td>
         <td><%= compra.estado %></td>
         <td><%= link_to 'Show', compra %></td>

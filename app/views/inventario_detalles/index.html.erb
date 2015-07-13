@@ -1,0 +1,35 @@
+<h1>Listing inventario_detalles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Inventario</th>
+      <th>Item</th>
+      <th>Cantidad</th>
+      <th>Precio unitario</th>
+      <th>Activo</th>
+      <th>Fecha vencimiento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inventario_detalles.each do |inventario_detalle| %>
+      <tr>
+        <td><%= inventario_detalle.inventario %></td>
+        <td><%= inventario_detalle.item %></td>
+        <td><%= inventario_detalle.cantidad %></td>
+        <td><%= inventario_detalle.precio_unitario %></td>
+        <td><%= inventario_detalle.activo %></td>
+        <td><%= inventario_detalle.fecha_vencimiento %></td>
+        <td><%= link_to 'Show', inventario_detalle %></td>
+        <td><%= link_to 'Edit', edit_inventario_detalle_path(inventario_detalle) %></td>
+        <td><%= link_to 'Destroy', inventario_detalle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inventario detalle', new_inventario_detalle_path %>

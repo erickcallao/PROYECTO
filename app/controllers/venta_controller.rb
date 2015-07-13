@@ -21,7 +21,7 @@ class VentaController < ApplicationController
   end
 
   def create
-    @ventum = Ventum.new(ventum_params)
+    @ventum = current_user.venta.new(ventum_params)
     @ventum.save
     respond_with(@ventum)
   end
@@ -42,6 +42,8 @@ class VentaController < ApplicationController
     end
 
     def ventum_params
-      params.require(:ventum).permit(:cliente_id, :user_id, :fecha, :total)
+      params.require(:ventum).permit(:cliente_id, :fecha, :total)
     end
+
+    
 end

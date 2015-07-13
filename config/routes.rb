@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  resources :fisis
+
+  resources :stocks
+
+  resources :inventario_detalles
+
+  resources :items
+
+  resources :unidad_medidas
+
+  resources :partidas
+
+  resources :inventarios
+
+  resources :almacens
+
+  resources :det_venta
+
+  get 'dd/ee'
+
   resources :det_pedidos
 
   resources :det_compras
@@ -17,6 +37,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :productos
+
   
   get 'home/almacen'
 

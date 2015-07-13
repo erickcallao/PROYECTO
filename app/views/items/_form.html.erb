@@ -1,0 +1,41 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :partida_id %><br>
+    <%= f.text_field :partida_id %>
+  </div>
+  <div class="field">
+    <%= f.label :unidad_medida_id %><br>
+    <%= f.text_field :unidad_medida_id %>
+  </div>
+  <div class="field">
+    <%= f.label :codigo %><br>
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :unidad_medida %><br>
+    <%= f.text_field :unidad_medida %>
+  </div>
+  <div class="field">
+    <%= f.label :foto_file_name %><br>
+    <%= f.text_field :foto_file_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

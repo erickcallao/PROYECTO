@@ -1,0 +1,2 @@
+module DetVentaHelper
+end

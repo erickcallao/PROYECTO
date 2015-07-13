@@ -14,6 +14,7 @@ class ProductosController < ApplicationController
   end
 
   def new
+
     @producto = Producto.new
     respond_with(@producto)
   end
@@ -43,6 +44,6 @@ class ProductosController < ApplicationController
     end
 
     def producto_params
-      params.require(:producto).permit(:nombre, :descripcion, :precio, :stock, :estado)
+      params.require(:producto).permit(:nombre, :descripcion, :precio, :stock, :estado, :categoria_id)
     end
 end

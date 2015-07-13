@@ -1,0 +1,31 @@
+<h1>Listing det_venta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Precio vent</th>
+      <th>Cantidad</th>
+      <th>Producto</th>
+      <th>Venta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @det_venta.each do |det_ventum| %>
+      <tr>
+        <td><%= det_ventum.precio_vent %></td>
+        <td><%= det_ventum.cantidad %></td>
+        <td><%= det_ventum.producto %></td>
+        <td><%= det_ventum.venta %></td>
+        <td><%= link_to 'Show', det_ventum %></td>
+        <td><%= link_to 'Edit', edit_det_ventum_path(det_ventum) %></td>
+        <td><%= link_to 'Destroy', det_ventum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Det ventum', new_det_ventum_path %>

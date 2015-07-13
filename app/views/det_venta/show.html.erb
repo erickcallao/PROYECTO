@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Precio vent:</strong>
+  <%= @det_ventum.precio_vent %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @det_ventum.cantidad %>
+</p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @det_ventum.producto %>
+</p>
+
+<p>
+  <strong>Venta:</strong>
+  <%= @det_ventum.venta %>
+</p>
+
+<%= link_to 'Edit', edit_det_ventum_path(@det_ventum) %> |
+<%= link_to 'Back', det_venta_path %>

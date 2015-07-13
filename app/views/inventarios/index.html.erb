@@ -1,0 +1,25 @@
+<% content_for :title do %>
+Inventarios
+<% end %>
+<h1>Inventarios</h1>
+
+<table>
+  <tr>
+    <th class="ui-state-default">Fecha</th>
+    <th class="ui-state-default">Total</th>
+    <th class="ui-state-default"></th>
+  </tr>
+<% @inventarios.each do |inv| %>
+  <tr>
+    <td><%= I18n.l inv.fecha, :format => "%d de %B %Y %H:%I" %></td>
+    <td class="num"><%= number_to_currency inv.total %></td>
+    <td>
+      <%= link_to "Ver", inventario_path(inv) %>
+      <%= link_to "Editar", edit_inventario_path(inv) %>
+      <%= link_to 'Borrar', inv, :confirm => 'Esta seguro?', :method => :delete %>
+    </td>
+  </tr>  
+<% end %>
+</table>
+<br>
+<%= link_to 'New Inventario', new_inventario_path %>

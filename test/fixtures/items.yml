@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  partida_id: 
+  unidad_medida_id: 
+  codigo: MyString
+  nombre: MyString
+  unidad_medida: MyString
+  foto_file_name: MyString
+
+two:
+  partida_id: 
+  unidad_medida_id: 
+  codigo: MyString
+  nombre: MyString
+  unidad_medida: MyString
+  foto_file_name: MyString

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  almacen_id: 
+  fecha: 2015-07-06 11:16:53
+  descripcion: MyString
+  tipo: MyString
+  total: 9.99
+
+two:
+  almacen_id: 
+  fecha: 2015-07-06 11:16:53
+  descripcion: MyString
+  tipo: MyString
+  total: 9.99

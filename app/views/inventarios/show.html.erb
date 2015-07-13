@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ver Inventario Detalle</h1>
+<strong>Descripción:</strong><br/>
+<%= @inventario.descripcion %>
+
+<table>
+  <tr>
+    <th class="ui-state-default">Item</th>
+    <th class="ui-state-default">Precio</th>
+    <th class="ui-state-default">Cantidad</th>
+    <th class="ui-state-default">Subtotal</th>
+  </tr>
+
+<% @inventario.inventario_detalles.each do |inv| %>
+  <tr>
+    <td><%= inv.item %></td>
+    <td><%=h inv.cantidad%></td>
+    <td><%=h inv.precio_unitario %></td>   
+    <td><%= (inv.precio_unitario and inv.cantidad) ? inv.precio_unitario * inv.cantidad : "0.0" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<%= link_to 'Listado', inventarios_path (:page => @page) %>
+<%= link_to 'Editar', edit_inventario_path(@inventario,:page => @page) %>
+
+
+<h1>Ver Inventario Detalle</h1>
+<strong>Descripción:</strong><br/>
+<%= @inventario.descripcion %>
+
+<table>
+  <tr>
+    <th class="ui-state-default">Item</th>
+    <th class="ui-state-default">Precio</th>
+    <th class="ui-state-default">Cantidad</th>
+    <th class="ui-state-default">Subtotal</th>
+  </tr>
+
+<% @inventario.inventario_detalles.each do |inv| %>
+  <tr>
+    <td><%= inv.item %></td>
+    <td><%=h inv.cantidad%></td>
+    <td><%=h inv.precio_unitario %></td>   
+    <td><%= (inv.precio_unitario and inv.cantidad) ? inv.precio_unitario * inv.cantidad : "0.0" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<%= link_to 'Listado', inventarios_path (:page => @page) %>
+<%= link_to 'Editar', edit_inventario_path(@inventario,:page => @page) %>
+

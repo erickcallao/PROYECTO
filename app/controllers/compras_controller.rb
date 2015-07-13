@@ -21,7 +21,7 @@ class ComprasController < ApplicationController
   end
 
   def create
-    @compra = Compra.new(compra_params)
+    @compra = current_user.compras.new(compra_params)
     @compra.save
     respond_with(@compra)
   end
@@ -42,6 +42,6 @@ class ComprasController < ApplicationController
     end
 
     def compra_params
-      params.require(:compra).permit(:user_id, :proveedor_id, :fecha, :estado)
+      params.require(:compra).permit( :proveedor_id, :fecha, :estado)
     end
 end

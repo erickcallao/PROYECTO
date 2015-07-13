@@ -1,0 +1,27 @@
+<h1>Listing fisis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fisis.each do |fisi| %>
+      <tr>
+        <td><%= fisi.nombre %></td>
+        <td><%= fisi.descripcion %></td>
+        <td><%= link_to 'Show', fisi %></td>
+        <td><%= link_to 'Edit', edit_fisi_path(fisi) %></td>
+        <td><%= link_to 'Destroy', fisi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fisi', new_fisi_path %>

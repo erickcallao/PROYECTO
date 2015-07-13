@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Almacen:</strong>
+  <%= @stock.almacen %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @stock.item %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @stock.cantidad %>
+</p>
+
+<p>
+  <strong>Valor inventario:</strong>
+  <%= @stock.valor_inventario %>
+</p>
+
+<p>
+  <strong>Activo:</strong>
+  <%= @stock.activo %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @stock.estado %>
+</p>
+
+<p>
+  <strong>Accion:</strong>
+  <%= @stock.accion %>
+</p>
+
+<p>
+  <strong>Fecha vencimiento:</strong>
+  <%= @stock.fecha_vencimiento %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

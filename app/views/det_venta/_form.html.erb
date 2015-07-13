@@ -1,0 +1,33 @@
+<%= form_for(@det_ventum) do |f| %>
+  <% if @det_ventum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@det_ventum.errors.count, "error") %> prohibited this det_ventum from being saved:</h2>
+
+      <ul>
+      <% @det_ventum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :precio_vent %><br>
+    <%= f.number_field :precio_vent %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br>
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="field">
+    <%= f.label :producto_id %><br>
+    <%= f.text_field :producto_id %>
+  </div>
+  <div class="field">
+    <%= f.label :venta_id %><br>
+    <%= f.text_field :venta_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
